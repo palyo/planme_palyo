@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="4dp">
+
+    <TextView
+        android:id="@+id/sundayText"
+        style="@style/TextSemiBold"
+        android:layout_width="@dimen/_0sdp"
+        android:layout_height="wrap_content"
+        android:paddingVertical="@dimen/_8sdp"
+        android:layout_weight="1"
+        android:textSize="@dimen/_12ssp" />
+
+    <TextView
+        android:id="@+id/mondayText"
+        style="@style/TextSemiBold"
+        android:layout_width="@dimen/_0sdp"
+        android:paddingVertical="@dimen/_8sdp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textSize="@dimen/_12ssp" />
+
+    <TextView
+        android:id="@+id/tuesdayText"
+        style="@style/TextSemiBold"
+        android:layout_width="@dimen/_0sdp"
+        android:layout_height="wrap_content"
+        android:paddingVertical="@dimen/_8sdp"
+        android:layout_weight="1"
+        android:textSize="@dimen/_12ssp" />
+
+    <TextView
+        android:id="@+id/wednesdayText"
+        style="@style/TextSemiBold"
+        android:layout_width="@dimen/_0sdp"
+        android:paddingVertical="@dimen/_8sdp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textSize="@dimen/_12ssp" />
+
+    <TextView
+        android:id="@+id/thursdayText"
+        style="@style/TextSemiBold"
+        android:paddingVertical="@dimen/_8sdp"
+        android:layout_width="@dimen/_0sdp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textSize="@dimen/_12ssp"/>
+
+    <TextView
+        android:id="@+id/fridayText"
+        style="@style/TextSemiBold"
+        android:paddingVertical="@dimen/_8sdp"
+        android:layout_width="@dimen/_0sdp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textSize="@dimen/_12ssp" />
+
+    <TextView
+        android:id="@+id/saturdayText"
+        style="@style/TextSemiBold"
+        android:paddingVertical="@dimen/_8sdp"
+        android:layout_width="@dimen/_0sdp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textSize="@dimen/_12ssp" />
+
+</LinearLayout>

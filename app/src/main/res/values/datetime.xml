@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="ThemeOverlay.App.DatePicker" parent="@style/ThemeOverlay.Material3.MaterialCalendar">
+        <item name="fontFamily">@font/regular</item>
+        <item name="colorPrimary">@color/colorAccent</item>
+        <item name="colorOnPrimary">@color/colorPrimary</item>
+        <item name="colorOnSurface">@color/colorText</item>
+        <item name="colorOnBackground">@color/colorAccent</item>
+        <item name="materialCalendarStyle">@style/Widget.App.MaterialCalendar</item>
+        <item name="dayStyle">@style/Widget.App.Day</item>
+        <item name="daySelectedStyle">@style/Widget.App.DaySelected</item>
+        <item name="dayTodayStyle">@style/Widget.App.Today</item>
+        <item name="yearStyle">@style/Widget.App.Year</item>
+        <item name="yearSelectedStyle">@style/Widget.App.YearSelected</item>
+        <item name="yearTodayStyle">@style/Widget.App.YearToday</item>
+    </style>
+
+    <style name="Widget.App.MaterialCalendar" parent="Widget.MaterialComponents.MaterialCalendar">
+        <item name="shapeAppearance">?attr/shapeAppearanceCornerExtraLarge</item>
+        <item name="backgroundTint">@color/colorPrimary</item>
+    </style>
+
+    <style name="Widget.App.Day" parent="Widget.Material3.MaterialCalendar.Day">
+        <item name="itemTextColor">@color/colorText</item>
+        <item name="itemStrokeColor">@color/colorText</item>
+        <item name="android:textColor">@color/colorText</item>
+    </style>
+
+    <style name="Widget.App.Today" parent="Widget.Material3.MaterialCalendar.Day.Today">
+        <item name="itemTextColor">@color/colorText</item>
+        <item name="itemStrokeColor">@color/colorText</item>
+        <item name="android:textColor">@color/colorText</item>
+    </style>
+
+    <style name="Widget.App.DaySelected" parent="Widget.Material3.MaterialCalendar.Day.Selected">
+        <item name="itemFillColor">@color/colorAccent</item>
+        <item name="itemTextColor">@color/colorAccentTool</item>
+        <item name="android:textColor">@color/colorText</item>
+    </style>
+
+    <style name="Widget.App.Year" parent="Widget.Material3.MaterialCalendar.Year">
+        <item name="itemTextColor">@color/colorText</item>
+        <item name="itemStrokeColor">@color/colorText</item>
+        <item name="android:textColor">@color/colorText</item>
+    </style>
+
+    <style name="Widget.App.YearToday" parent="Widget.Material3.MaterialCalendar.Year.Today">
+        <item name="itemTextColor">@color/colorText</item>
+        <item name="itemStrokeColor">@color/colorText</item>
+        <item name="android:textColor">@color/colorText</item>
+    </style>
+
+    <style name="Widget.App.YearSelected" parent="Widget.Material3.MaterialCalendar.Year.Selected">
+        <item name="itemFillColor">@color/colorAccent</item>
+        <item name="itemTextColor">@color/colorAccentTool</item>
+        <item name="android:textColor">@color/colorText</item>
+    </style>
+
+    <style name="TimePicker" parent="@style/ThemeOverlay.Material3.MaterialTimePicker">
+        <item name="colorPrimary">@color/colorAccent</item>
+        <item name="colorOnPrimary">@color/colorPrimary</item>
+        <item name="colorOnSurface">@color/colorText</item>
+        <item name="colorOnBackground">@color/colorPrimary</item>
+        <item name="materialClockStyle">@style/TimePicker.Clock</item>
+        <item name="chipStyle">@style/Widget.App.Chip</item>
+        <item name="materialTimePickerStyle">@style/Widget.Material3.MaterialTimePicker</item>
+        <item name="materialButtonOutlinedStyle">@style/TimePicker.Clock.AmPmButton</item>
+        <item name="fontFamily">@font/medium</item>
+    </style>
+
+    <style name="Widget.Material3.MaterialTimePicker" parent="Widget.MaterialComponents.TimePicker">
+        <item name="shapeAppearance">?attr/shapeAppearanceCornerExtraLarge</item>
+        <item name="backgroundTint">@color/colorPrimary</item>
+    </style>
+
+    <style name="Widget.App.Chip" parent="Widget.Material3.MaterialTimePicker.Display">
+        <item name="android:textColor">@color/ic_timer_text_field_tint</item>
+        <item name="chipBackgroundColor">@color/ic_timer_bg_tint</item>
+        <item name="chipSurfaceColor">@color/colorPrimary</item>
+        <item name="chipStrokeColor">@color/ic_timer_field_tint</item>
+        <item name="fontFamily">@font/semi_bold</item>
+    </style>
+
+    <style name="TimePicker.Clock" parent="Widget.Material3.MaterialTimePicker.Clock">
+        <item name="colorOnPrimary">@color/colorAccent</item>
+        <item name="clockFaceBackgroundColor">@color/colorCardBackground</item>
+        <item name="clockHandColor">@color/colorAccent80</item>
+        <item name="clockNumberTextColor">@color/ic_timer_text_tint</item>
+        <item name="fontFamily">@font/semi_bold</item>
+    </style>
+
+    <style name="TimePicker.Clock.AmPmButton" parent="Widget.MaterialComponents.TimePicker.Button">
+        <item name="backgroundTint">@color/ic_timer_bg_tint</item>
+        <item name="android:textAppearance">@style/TextMedium
+        </item>
+        <item name="strokeColor">@color/colorIcon</item>
+        <item name="android:textColor">@color/ic_timer_text_field_tint</item>
+    </style>
+
+    <style name="WeekText" parent="Widget.AppCompat.TextView">
+        <item name="fontFamily">@font/bold</item>
+        <item name="android:textColor">@color/colorText</item>
+        <item name="android:textSize">@dimen/_11sdp</item>
+    </style>
+
+    <style name="MonthText" parent="Widget.AppCompat.TextView">
+        <item name="fontFamily">@font/regular</item>
+        <item name="android:textColor">@color/colorText</item>
+        <item name="android:textSize">@dimen/_11sdp</item>
+    </style>
+
+    <style name="YearText" parent="Widget.AppCompat.TextView">
+        <item name="fontFamily">@font/medium</item>
+        <item name="android:textColor">@color/colorText</item>
+        <item name="android:textSize">@dimen/_11sdp</item>
+    </style>
+</resources>

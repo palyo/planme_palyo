@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+    <uses-permission android:name="android.permission.USE_EXACT_ALARM" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32"
+        tools:ignore="ScopedStorage" />
+    <uses-permission
+        android:name="android.permission.USE_FULL_SCREEN_INTENT"
+        tools:node="remove" />
+    <uses-permission
+        android:name="android.permission.READ_CALL_LOG"
+        tools:node="remove" />
+    <uses-permission
+        android:name="android.permission.ACCESS_COARSE_LOCATION"
+        tools:node="remove" />
+    <uses-permission
+        android:name="android.permission.ACCESS_FINE_LOCATION"
+        tools:node="remove" />
+    <uses-permission
+        android:name="android.permission.ACCESS_BACKGROUND_LOCATION"
+        tools:node="remove" />
+
+    <uses-permission-sdk-23
+        android:name="android.permission.ACCESS_FINE_LOCATION"
+        tools:node="remove" />
+
+    <uses-permission
+        android:name="android.permission.READ_CONTACTS"
+        tools:node="remove" />
+    <uses-permission
+        android:name="android.permission.WRITE_CONTACTS"
+        tools:node="remove" />
+
+    <application
+        android:name=".App"
+        android:allowBackup="false"
+        android:allowClearUserData="false"
+        android:appCategory="productivity"
+        android:hasFragileUserData="true"
+        android:icon="@mipmap/ic_launcher"
+        android:isGame="false"
+        android:label="@string/app_name_manifest"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.PlanMe"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="UPSIDE_DOWN_CAKE">
+
+        <receiver
+            android:name=".receiver.TaskReminderReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.NOTIFY" />
+            </intent-filter>
+        </receiver>
+
+        <meta-data
+            android:name="com.calldorado.AccountId"
+            android:value="a1-cad480c4-c6c4-4b44-aabe-23a0f5322a3f" />
+        <meta-data
+            android:name="com.calldorado.AppId"
+            android:value="b0-ddd2d88f-bec4-4ebf-b12f-b10b52a50136" />
+
+        <receiver
+            android:name=".calldorado.SetupFragmentReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter android:priority="100">
+                <action android:name="android.intent.action.PHONE_STATE" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".calldorado.FirebaseEventBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="custom_firebase_event" />
+            </intent-filter>
+        </receiver>
+
+        <meta-data
+            android:name="com.calldorado.wsf"
+            android:value="true" />
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-3940256099942544~3347511713"
+            tools:replace="android:value" />
+        <meta-data
+            android:name="com.google.android.gms.ads.flag.NATIVE_AD_DEBUGGER_ENABLED"
+            android:value="false" />
+
+        <activity
+            android:name=".activity.main.AppLanguageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.main.AppPermissionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.main.NewPermissionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.main.PromptActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Space.Prompt" />
+
+        <activity
+            android:name=".activity.TrackTaskActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.CompletedTaskActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.AddTaskActivity"
+            android:exported="false"
+            android:parentActivityName=".activity.PlannerActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activity.PlannerActivity" />
+        </activity>
+        <activity
+            android:name=".activity.PlannerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.LauncherActivity"
+            android:exported="true"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

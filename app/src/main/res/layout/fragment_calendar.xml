@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.CalendarFragment">
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/text_current_date"
+        style="@style/MaterialButtonTransparent"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_28sdp"
+        android:layout_marginStart="@dimen/_12sdp"
+        android:paddingHorizontal="@dimen/_0sdp"
+        android:text="01 May, 2023"
+        android:textSize="@dimen/_12ssp"
+        app:icon="@drawable/ic_icon_expand"
+        app:iconGravity="textEnd"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:rippleColor="@color/colorTransparent" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/text_task_today"
+        style="@style/TextRegular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_12sdp"
+        android:alpha="0.75"
+        android:text="0 task for today"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_current_date" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="@dimen/_0sdp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:clipToPadding="false"
+        android:orientation="horizontal"
+        android:paddingHorizontal="@dimen/_12sdp"
+        android:paddingVertical="@dimen/_2sdp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_task_today"
+        tools:listitem="@layout/layout_row_item_week_day" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/label_your_timeline"
+        style="@style/TextSemiBold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_12sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:text="@string/label_your_timeline"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recycler_view" />
+
+    <HorizontalScrollView
+        android:id="@+id/horizontal_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_gradient_timeline_background"
+        android:fillViewport="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/label_your_timeline">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clipToPadding="true"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/_80sdp">
+
+            <aurora.reminder.todolist.calendar.view.TimelineHourView
+                android:id="@+id/timelineHoursView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fillViewport="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <aurora.reminder.todolist.calendar.view.TimelineView
+                        android:id="@+id/timelineContainer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+            </ScrollView>
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_12sdp"
+        app:cardBackgroundColor="@color/colorCardBackground50"
+        app:cardCornerRadius="@dimen/_8sdp"
+        app:cardElevation="@dimen/_0sdp"
+        app:layout_constraintBottom_toTopOf="@+id/view_bottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:strokeColor="@color/colorIconOpacity12"
+        app:strokeWidth="1dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button_zoom_in"
+                style="@style/MaterialButtonTransparent"
+                android:layout_width="@dimen/_32sdp"
+                android:layout_height="@dimen/_32sdp"
+                android:padding="@dimen/_0sdp"
+                app:backgroundTint="@color/colorCardBackground"
+                app:cornerRadius="@dimen/_0sdp"
+                app:icon="@drawable/ic_icon_zoom_out"
+                app:iconGravity="textStart"
+                app:iconPadding="@dimen/_0sdp"
+                app:iconSize="@dimen/_16sdp"
+                app:iconTint="@color/colorIcon"
+                app:layout_constraintBottom_toTopOf="@+id/view_divider1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/view_divider1"
+                android:layout_width="@dimen/_0sdp"
+                android:layout_height="1dp"
+                android:background="@color/colorIconOpacity12"
+                app:layout_constraintBottom_toTopOf="@+id/button_zoom_out"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button_zoom_in" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button_zoom_out"
+                style="@style/MaterialButtonTransparent"
+                android:layout_width="@dimen/_32sdp"
+                android:layout_height="@dimen/_32sdp"
+                android:padding="@dimen/_0sdp"
+                app:backgroundTint="@color/colorCardBackground"
+                app:cornerRadius="@dimen/_0sdp"
+                app:icon="@drawable/ic_icon_zoom_in"
+                app:iconGravity="textStart"
+                app:iconPadding="@dimen/_0sdp"
+                app:iconSize="@dimen/_16sdp"
+                app:iconTint="@color/colorIcon"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view_divider1" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <View
+        android:id="@+id/view_bottom"
+        android:layout_width="@dimen/_0sdp"
+        android:layout_height="@dimen/_80sdp"
+        android:background="@drawable/ic_gradient_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

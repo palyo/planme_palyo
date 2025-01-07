@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="8dp">
+
+    <TextView
+        style="@style/TextRegular"
+        android:layout_width="@dimen/_0sdp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Sun"
+        android:textSize="@dimen/_10ssp" />
+
+    <TextView
+        style="@style/TextRegular"
+        android:layout_width="@dimen/_0sdp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Mon"
+        android:textSize="@dimen/_10ssp" />
+
+    <TextView
+        style="@style/TextRegular"
+        android:layout_width="@dimen/_0sdp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Tue"
+        android:textSize="@dimen/_10ssp" />
+
+    <TextView
+        style="@style/TextRegular"
+        android:layout_width="@dimen/_0sdp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Wed"
+        android:textSize="@dimen/_10ssp" />
+
+    <TextView
+        style="@style/TextRegular"
+        android:layout_width="@dimen/_0sdp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Thu"
+        android:textSize="@dimen/_10ssp" />
+
+    <TextView
+        style="@style/TextRegular"
+        android:layout_width="@dimen/_0sdp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Fri"
+        android:textSize="@dimen/_10ssp" />
+
+    <TextView
+        style="@style/TextRegular"
+        android:layout_width="@dimen/_0sdp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Sat"
+        android:textSize="@dimen/_10ssp" />
+
+</LinearLayout>

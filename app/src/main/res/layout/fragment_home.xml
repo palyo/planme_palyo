@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.HomeFragment">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="@dimen/_0sdp"
+        android:layout_height="@dimen/_0sdp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/input_search_task"
+                style="@style/Theme.PlanMe.TextInputLayout"
+                android:layout_width="@dimen/_0sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_24sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_search_task"
+                    style="@style/TextMedium"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_icon_search"
+                    android:drawablePadding="@dimen/_8sdp"
+                    android:gravity="start|center_vertical"
+                    android:hint="@string/text_hint_search_your_task"
+                    android:inputType="text"
+                    android:paddingVertical="@dimen/_12sdp"
+                    android:singleLine="true"
+                    android:textColor="@color/colorTextOpacity"
+                    android:textSize="@dimen/_12ssp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/text_current_date"
+                style="@style/MaterialButtonTransparent"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_28sdp"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:paddingHorizontal="@dimen/_0sdp"
+                android:text="01 May, 2023"
+                android:textSize="@dimen/_12ssp"
+                app:icon="@drawable/ic_icon_expand"
+                app:iconGravity="textEnd"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/input_search_task"
+                app:rippleColor="@color/colorTransparent" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view"
+                android:layout_width="@dimen/_0sdp"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:orientation="horizontal"
+                android:paddingHorizontal="@dimen/_12sdp"
+                android:paddingVertical="@dimen/_2sdp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_current_date"
+                tools:listitem="@layout/layout_row_item_week_day" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/label_your_workspace"
+                style="@style/TextSemiBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:text="@string/label_your_workspace"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/recycler_view" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_workspace_user"
+                android:layout_width="@dimen/_0sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_4sdp"
+                android:minHeight="@dimen/_100sdp"
+                app:cardBackgroundColor="@color/colorInverseCardBackground"
+                app:cardCornerRadius="@dimen/_10sdp"
+                app:contentPadding="@dimen/_12sdp"
+                app:layout_constraintEnd_toStartOf="@+id/card_workspace_system"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/label_your_workspace"
+                app:strokeWidth="@dimen/_0sdp">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_view_workspace_user"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_120sdp"
+                    android:nestedScrollingEnabled="true" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_daily_task"
+                android:layout_width="@dimen/_0sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                app:cardBackgroundColor="#FE9E9D"
+                app:cardCornerRadius="@dimen/_10sdp"
+                app:contentPadding="@dimen/_12sdp"
+                app:layout_constraintEnd_toEndOf="@+id/card_workspace_user"
+                app:layout_constraintStart_toStartOf="@+id/card_workspace_user"
+                app:layout_constraintTop_toBottomOf="@+id/card_workspace_user"
+                app:strokeWidth="@dimen/_0sdp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/title_daily_task"
+                        style="@style/TextSemiBold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/label_daily_tasks"
+                        android:textColor="@color/colorAccentTool"
+                        android:textSize="@dimen/_11ssp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/body_daily_task"
+                        style="@style/TextRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0/0 done"
+                        android:textColor="@color/colorAccentTool"
+                        android:textSize="@dimen/_9ssp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/title_daily_task" />
+
+                    <com.google.android.material.progressindicator.LinearProgressIndicator
+                        android:id="@+id/progress_daily_task"
+                        android:layout_width="@dimen/_0sdp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        app:indicatorColor="@color/colorAccentTool"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/body_daily_task"
+                        app:trackColor="@color/colorWhite16"
+                        app:trackStopIndicatorSize="@dimen/_0sdp" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_workspace_system"
+                android:layout_width="@dimen/_0sdp"
+                android:layout_height="@dimen/_0sdp"
+                android:layout_marginStart="@dimen/_4sdp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                app:cardBackgroundColor="@color/colorAccent"
+                app:cardCornerRadius="@dimen/_10sdp"
+                app:contentPadding="@dimen/_12sdp"
+                app:layout_constraintBottom_toTopOf="@+id/card_completed_task"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/card_workspace_user"
+                app:layout_constraintTop_toTopOf="@+id/card_workspace_user"
+                app:strokeWidth="@dimen/_0sdp">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_view_workspace_system"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_completed_task"
+                android:layout_width="@dimen/_0sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                app:cardBackgroundColor="#CB85FC"
+                app:cardCornerRadius="@dimen/_10sdp"
+                app:contentPadding="@dimen/_12sdp"
+                app:layout_constraintBottom_toBottomOf="@+id/card_daily_task"
+                app:layout_constraintEnd_toEndOf="@+id/card_workspace_system"
+                app:layout_constraintStart_toStartOf="@+id/card_workspace_system"
+                app:layout_constraintTop_toBottomOf="@+id/card_workspace_system"
+                app:strokeWidth="@dimen/_0sdp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/title_completed"
+                        style="@style/TextSemiBold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/label_completed_tasks"
+                        android:textColor="@color/colorAccentTool"
+                        android:textSize="@dimen/_11ssp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/body_completed"
+                        style="@style/TextRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0/0 done"
+                        android:textColor="@color/colorAccentTool"
+                        android:textSize="@dimen/_9ssp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/title_completed" />
+
+                    <com.google.android.material.progressindicator.LinearProgressIndicator
+                        android:id="@+id/progress_completed"
+                        android:layout_width="@dimen/_0sdp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        app:indicatorColor="@color/colorAccentTool"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/body_completed"
+                        app:trackColor="@color/colorWhite16"
+                        app:trackStopIndicatorSize="@dimen/_0sdp" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/label_today_task"
+                style="@style/TextSemiBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:text="@string/label_tasks"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintBottom_toBottomOf="@+id/button_see_more"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/button_see_more" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button_see_more"
+                style="@style/MaterialButtonTransparent"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_6sdp"
+                android:paddingHorizontal="@dimen/_0sdp"
+                android:text="@string/button_see_more"
+                android:textSize="@dimen/_10ssp"
+                android:visibility="invisible"
+                app:fontFamily="@font/regular"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/card_daily_task" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view_task"
+                android:layout_width="@dimen/_0sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:clipToPadding="true"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/_80sdp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button_see_more"
+                tools:listitem="@layout/layout_row_item_task" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_first_task"
+                android:layout_width="@dimen/_0sdp"
+                android:layout_height="@dimen/_0sdp"
+                android:background="@color/colorBackground"
+                android:paddingHorizontal="@dimen/_12sdp"
+                android:paddingTop="@dimen/_12sdp"
+                android:paddingBottom="@dimen/_100sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/card_daily_task">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/title_first_task"
+                    style="@style/TextExtraBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Let's Get Started!"
+                    android:textSize="@dimen/_18ssp"
+                    app:layout_constraintBottom_toTopOf="@+id/body_first_task"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_chainStyle="packed" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/body_first_task"
+                    style="@style/TextRegular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:paddingHorizontal="@dimen/_24sdp"
+                    android:text="Plan your day by adding a task. Achieve more with a clear focus!"
+                    android:textColor="@color/colorTextOpacity"
+                    android:textSize="@dimen/_10ssp"
+                    app:layout_constraintBottom_toTopOf="@+id/button_first_task"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/title_first_task" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_first_task"
+                    style="@style/MaterialButtonTransparent"
+                    android:layout_width="@dimen/_36sdp"
+                    android:layout_height="@dimen/_36sdp"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:paddingHorizontal="@dimen/_36sdp"
+                    android:textSize="@dimen/_12ssp"
+                    android:visibility="gone"
+                    app:backgroundTint="@color/colorAccent"
+                    app:icon="@drawable/ic_icon_arrow_right"
+                    app:iconGravity="textEnd"
+                    app:iconPadding="@dimen/_0sdp"
+                    app:iconSize="@dimen/_36sdp"
+                    app:iconTint="@color/colorAccentTool"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/body_first_task" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_bubble"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:layout_marginEnd="@dimen/_24sdp"
+        android:background="@drawable/ic_vector_intro_bubble"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/view_bottom"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/TextMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/_12sdp"
+            android:paddingTop="@dimen/_12sdp"
+            android:paddingBottom="@dimen/_24sdp"
+            android:text="Tap to create your first task."
+            android:textColor="@color/colorAccentTool"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/view_bottom"
+        android:layout_width="@dimen/_0sdp"
+        android:layout_height="@dimen/_80sdp"
+        android:background="@drawable/ic_gradient_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

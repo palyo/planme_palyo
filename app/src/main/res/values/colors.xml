@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FFFFFF</color>
+    <color name="colorPrimaryDark">#FFFFFF</color>
+    <color name="colorBackground">#FFFFFF</color>
+    <color name="colorBackgroundStart">#CCFFFFFF</color>
+    <color name="colorBackgroundEnd">#88FFFFFF</color>
+    <color name="colorSecondaryBackground">#EDEDED</color>
+
+    <color name="colorAccent">#70B2FF</color>
+    <color name="colorAccent80">#CC70B2FF</color>
+    <color name="colorAccent64">#A370B2FF</color>
+    <color name="colorAccent50">#8070B2FF</color>
+    <color name="colorAccent34">#5770B2FF</color>
+    <color name="colorAccent12">#1F70B2FF</color>
+    <color name="colorAccent8">#1470B2FF</color>
+    <color name="colorAccentTool">#FFFFFF</color>
+
+    <color name="colorInverseText">#FFFFFF</color>
+    <color name="colorInverseCardBackground">#333333</color>
+    <color name="colorCardBackground">#D8DBE4</color>
+    <color name="colorCardBackground34">#57D8DBE4</color>
+    <color name="colorCardBackground50">#80D8DBE4</color>
+
+    <color name="colorIcon">#212121</color>
+    <color name="colorIconOpacity">#757575</color>
+    <color name="colorIconOpacity24">#3D212121</color>
+    <color name="colorIconOpacity12">#1F212121</color>
+    <color name="colorText">#212121</color>
+    <color name="colorTextOpacity">#757575</color>
+    <color name="colorTextOpacity24">#3D212121</color>
+
+    <color name="colorTransparent">#00000000</color>
+
+    <color name="colorBlack">#000000</color>
+    <color name="colorBlack16">#2A000000</color>
+    <color name="colorBlack24">#3D000000</color>
+    <color name="colorBlack34">#57000000</color>
+    <color name="colorBlack80">#CC000000</color>
+
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorWhite16">#2AFFFFFF</color>
+    <color name="colorWhite25">#40FFFFFF</color>
+    <color name="colorWhite34">#57FFFFFF</color>
+    <color name="colorWhite80">#CCFFFFFF</color>
+</resources>

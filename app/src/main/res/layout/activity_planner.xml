@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    tools:context=".activity.PlannerActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_top_bar"
+        android:layout_width="@dimen/_0sdp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorBackground"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="@dimen/_0sdp"
+            android:layout_height="wrap_content"
+            android:background="@color/colorTransparent"
+            android:theme="@style/Theme.Space.AppBarOverlay"
+            app:elevation="@dimen/_0sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@null"
+                android:theme="@style/Theme.PlanMe"
+                app:contentInsetStart="@dimen/_12sdp"
+                app:popupTheme="@style/Theme.Space.PopupMenu"
+                app:title="@string/app_name"
+                app:titleCentered="true"
+                app:titleTextAppearance="@style/TextAppearance.Space.TitleSmall"
+                app:titleTextColor="@color/colorText">
+
+            </com.google.android.material.appbar.MaterialToolbar>
+        </com.google.android.material.appbar.AppBarLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.circularreveal.CircularRevealFrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="@dimen/_0sdp"
+        android:layout_height="@dimen/_0sdp"
+        android:layout_marginBottom="@dimen/_4sdp"
+        app:layout_constraintBottom_toTopOf="@+id/ad_banner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layout_top_bar" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_bottom_bar"
+        android:layout_width="@dimen/_0sdp"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/_24sdp"
+        android:paddingTop="@dimen/_12sdp"
+        android:layout_marginBottom="@dimen/_4sdp"
+        android:paddingBottom="@dimen/_12sdp"
+        app:layout_constraintBottom_toTopOf="@+id/ad_banner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_bottom_create_control"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/button_create"
+            app:layout_constraintEnd_toEndOf="@+id/button_create">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button_create_workspace"
+                style="@style/MaterialButtonAccent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_8sdp"
+                android:gravity="end|center_vertical"
+                android:paddingVertical="@dimen/_8sdp"
+                android:text="Workspace"
+                android:textColor="@color/colorIcon"
+                android:textSize="@dimen/_10ssp"
+                app:backgroundTint="@color/colorCardBackground"
+                app:icon="@drawable/ic_icon_workspace"
+                app:iconGravity="textEnd"
+                app:iconPadding="@dimen/_8sdp"
+                app:iconTint="@color/colorIcon"
+                app:layout_constraintBottom_toTopOf="@+id/button_create_task"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button_create_task"
+                style="@style/MaterialButtonAccent"
+                android:layout_width="@dimen/_0sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_2sdp"
+                android:gravity="end|center_vertical"
+                android:paddingVertical="@dimen/_8sdp"
+                android:text="Task"
+                android:textColor="@color/colorIcon"
+                android:textSize="@dimen/_10ssp"
+                app:backgroundTint="@color/colorCardBackground"
+                app:icon="@drawable/ic_icon_task"
+                app:iconGravity="textEnd"
+                app:iconPadding="@dimen/_8sdp"
+                app:iconTint="@color/colorIcon"
+                app:layout_constraintBottom_toTopOf="@+id/button_create_workspace"
+                app:layout_constraintEnd_toEndOf="@+id/button_create_workspace" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_bottom"
+            android:layout_width="@dimen/_0sdp"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/colorCardBackground"
+            app:cardCornerRadius="@dimen/_56sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/button_create"
+            app:layout_constraintStart_toStartOf="parent"
+            app:strokeColor="@color/colorIconOpacity24"
+            app:strokeWidth=".5dp">
+
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/bottom_navigation_view"
+                style="@style/Theme.PlanMe.BottomNavigationView"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_48sdp"
+                app:menu="@menu/bottom_navigation_menu" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_create"
+            style="@style/MaterialButtonAccent"
+            android:layout_width="@dimen/_48sdp"
+            android:layout_height="@dimen/_48sdp"
+            android:layout_marginStart="@dimen/_12sdp"
+            app:icon="@drawable/ic_icon_add"
+            app:iconGravity="textStart"
+            app:iconPadding="@dimen/_0sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/card_bottom" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.circularreveal.CircularRevealRelativeLayout
+        android:id="@+id/ad_banner"
+        android:layout_width="@dimen/_0sdp"
+        android:layout_height="@dimen/native_56dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

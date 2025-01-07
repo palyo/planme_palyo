@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    tools:context=".activity.AddTaskActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_top_bar"
+        android:layout_width="@dimen/_0sdp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorBackground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="@dimen/_0sdp"
+            android:layout_height="wrap_content"
+            android:background="@color/colorTransparent"
+            android:theme="@style/Theme.Space.AppBarOverlay"
+            app:elevation="@dimen/_0sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@null"
+                android:theme="@style/Theme.PlanMe"
+                app:contentInsetStart="@dimen/_12sdp"
+                app:navigationIcon="@drawable/ic_navigation_close"
+                app:popupTheme="@style/Theme.Space.PopupMenu"
+                app:title="@string/title_new_task"
+                app:titleCentered="true"
+                app:titleTextAppearance="@style/TextAppearance.Space.TitleSmall"
+                app:titleTextColor="@color/colorText">
+
+            </com.google.android.material.appbar.MaterialToolbar>
+        </com.google.android.material.appbar.AppBarLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="@dimen/_0sdp"
+        android:layout_height="@dimen/_0sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layout_top_bar">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="@dimen/_0sdp"
+            android:layout_height="@dimen/_0sdp"
+            android:fillViewport="true"
+            app:layout_constraintBottom_toTopOf="@+id/button_create"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/_16sdp">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/label_title"
+                    style="@style/TextSemiBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:text="@string/label_title"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/input_title"
+                    style="@style/Theme.PlanMe.TextInputLayout"
+                    android:layout_width="@dimen/_0sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/label_title">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edit_title"
+                        style="@style/TextRegular"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="start|center_vertical"
+                        android:hint="@string/hint_task_title"
+                        android:inputType="text"
+                        android:paddingVertical="@dimen/_12sdp"
+                        android:singleLine="true"
+                        android:textColor="@color/colorTextOpacity"
+                        android:textSize="@dimen/_12ssp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/label_body"
+                    style="@style/TextSemiBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:text="@string/label_description"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/input_title" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/input_body"
+                    style="@style/Theme.PlanMe.TextInputLayout"
+                    android:layout_width="@dimen/_0sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/label_body">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edit_body"
+                        style="@style/TextRegular"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:hint="@string/hint_task_description"
+                        android:inputType="textMultiLine"
+                        android:minLines="4"
+                        android:paddingVertical="@dimen/_12sdp"
+                        android:singleLine="true"
+                        android:textColor="@color/colorTextOpacity"
+                        android:textSize="@dimen/_12ssp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/label_due_date"
+                    style="@style/TextSemiBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:text="@string/label_due_date"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintStart_toStartOf="@+id/input_due_date"
+                    app:layout_constraintTop_toBottomOf="@+id/input_body" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/input_due_date"
+                    style="@style/Theme.PlanMe.TextInputLayout"
+                    android:layout_width="@dimen/_0sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:layout_marginEnd="@dimen/_4sdp"
+                    app:layout_constraintEnd_toStartOf="@+id/input_end_date"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/label_due_date">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edit_due_date"
+                        style="@style/TextRegular"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:drawableEnd="@drawable/ic_icon_calendar"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:gravity="start|center_vertical"
+                        android:hint="@string/hint_dd_mmmm"
+                        android:inputType="date"
+                        android:paddingVertical="@dimen/_12sdp"
+                        android:singleLine="true"
+                        android:textColor="@color/colorTextOpacity"
+                        android:textSize="@dimen/_12ssp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/label_end_date"
+                    style="@style/TextSemiBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:text="@string/label_end_date"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintStart_toStartOf="@+id/input_end_date"
+                    app:layout_constraintTop_toBottomOf="@+id/input_body" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/input_end_date"
+                    style="@style/Theme.PlanMe.TextInputLayout"
+                    android:layout_width="@dimen/_0sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_4sdp"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/input_due_date"
+                    app:layout_constraintTop_toBottomOf="@+id/label_due_date">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edit_end_date"
+                        style="@style/TextRegular"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:drawableEnd="@drawable/ic_icon_calendar"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:gravity="start|center_vertical"
+                        android:hint="@string/hint_dd_mmmm"
+                        android:inputType="date"
+                        android:paddingVertical="@dimen/_12sdp"
+                        android:singleLine="true"
+                        android:textColor="@color/colorTextOpacity"
+                        android:textSize="@dimen/_12ssp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/label_start_time"
+                    style="@style/TextSemiBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:text="@string/label_start_time"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintStart_toStartOf="@+id/input_start_time"
+                    app:layout_constraintTop_toBottomOf="@+id/input_due_date" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/input_start_time"
+                    style="@style/Theme.PlanMe.TextInputLayout"
+                    android:layout_width="@dimen/_0sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:layout_marginEnd="@dimen/_4sdp"
+                    app:layout_constraintEnd_toStartOf="@+id/input_end_time"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/label_start_time">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edit_start_time"
+                        style="@style/TextRegular"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:drawableEnd="@drawable/ic_icon_clock"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:gravity="start|center_vertical"
+                        android:hint="@string/hint_hh_mm"
+                        android:inputType="date"
+                        android:paddingVertical="@dimen/_12sdp"
+                        android:singleLine="true"
+                        android:textColor="@color/colorTextOpacity"
+                        android:textSize="@dimen/_12ssp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/label_end_time"
+                    style="@style/TextSemiBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:text="@string/label_end_time"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintStart_toStartOf="@+id/input_end_time"
+                    app:layout_constraintTop_toBottomOf="@+id/input_end_date" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/input_end_time"
+                    style="@style/Theme.PlanMe.TextInputLayout"
+                    android:layout_width="@dimen/_0sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_4sdp"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/input_start_time"
+                    app:layout_constraintTop_toBottomOf="@+id/label_end_time">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edit_end_time"
+                        style="@style/TextRegular"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:drawableEnd="@drawable/ic_icon_clock"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:gravity="start|center_vertical"
+                        android:hint="@string/hint_hh_mm"
+                        android:inputType="date"
+                        android:paddingVertical="@dimen/_12sdp"
+                        android:singleLine="true"
+                        android:textColor="@color/colorTextOpacity"
+                        android:textSize="@dimen/_12ssp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/label_task_type"
+                    style="@style/TextSemiBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:text="@string/label_task_submission"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/input_start_time" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_onetime"
+                    style="@style/MaterialButtonTransparent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_32sdp"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:button="@drawable/ic_button_selector"
+                    android:paddingHorizontal="@dimen/_12sdp"
+                    android:text="Onetime"
+                    android:textColor="@color/ic_button_content_item_tint"
+                    android:textSize="@dimen/_12ssp"
+                    app:backgroundTint="@color/ic_button_container_selector"
+                    app:cornerRadius="@dimen/_8sdp"
+                    app:icon="@drawable/ic_button_selector"
+                    app:iconTint="@color/ic_button_content_item_tint"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/label_task_type" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_daily"
+                    style="@style/MaterialButtonTransparent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_32sdp"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:button="@drawable/ic_button_selector"
+                    android:paddingHorizontal="@dimen/_12sdp"
+                    android:text="Daily"
+                    android:textColor="@color/ic_button_content_item_tint"
+                    android:textSize="@dimen/_12ssp"
+                    app:backgroundTint="@color/ic_button_container_selector"
+                    app:cornerRadius="@dimen/_8sdp"
+                    app:icon="@drawable/ic_button_selector"
+                    app:iconTint="@color/ic_button_content_item_tint"
+                    app:layout_constraintStart_toEndOf="@+id/button_onetime"
+                    app:layout_constraintTop_toTopOf="@+id/button_onetime" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/label_workspace"
+                    style="@style/TextSemiBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:text="@string/label_workspace"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/button_onetime" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="@dimen/_0sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    app:cardCornerRadius="@dimen/_8sdp"
+                    app:cardElevation="@dimen/_0sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/label_workspace">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/input_workspace"
+                        style="@style/Theme.PlanMe.TextInputLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:endIconMode="dropdown_menu"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/label_workspace">
+
+                        <AutoCompleteTextView
+                            android:id="@+id/edit_workspace"
+                            style="@style/TextRegular"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/colorCardBackground"
+                            android:gravity="start|center_vertical"
+                            android:hint="@string/hint_select_workspace"
+                            android:inputType="none"
+                            android:padding="@dimen/_14sdp"
+                            android:singleLine="true"
+                            android:textColor="@color/colorTextOpacity"
+                            android:textSize="@dimen/_12ssp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </androidx.cardview.widget.CardView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_create"
+            style="@style/MaterialButtonAccent"
+            android:layout_width="@dimen/_0sdp"
+            android:layout_height="@dimen/_42sdp"
+            android:layout_marginHorizontal="@dimen/_16sdp"
+            android:layout_marginBottom="@dimen/_12sdp"
+            app:cornerRadius="@dimen/_8sdp"
+            app:backgroundTint="@color/colorInverseCardBackground"
+            android:textColor="@color/colorInverseText"
+            android:text="@string/button_create_task"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

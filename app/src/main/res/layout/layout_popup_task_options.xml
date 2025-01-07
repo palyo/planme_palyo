@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/ic_bg_rounded_stroke_10sdp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_task"
+        android:layout_width="@dimen/_200sdp"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_8sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/task_title"
+            style="@style/TextSemiBold"
+            android:layout_width="@dimen/_0sdp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:gravity="start|center_vertical"
+            android:singleLine="true"
+            android:text="Task"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintBottom_toTopOf="@+id/task_body"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/task_body"
+            style="@style/TextRegular"
+            android:layout_width="@dimen/_0sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:alpha="0.7"
+            android:ellipsize="end"
+            android:gravity="start|center_vertical"
+            android:singleLine="true"
+            android:text="Description about task"
+            android:textSize="@dimen/_8ssp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/task_title" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/task_details"
+            style="@style/TextRegular"
+            android:layout_width="@dimen/_0sdp"
+            android:layout_height="wrap_content"
+            android:alpha="0.7"
+            android:ellipsize="end"
+            android:gravity="start|center_vertical"
+            android:singleLine="true"
+            android:text="Description about task"
+            android:textSize="@dimen/_8ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/task_body" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/view_divider"
+        android:layout_width="@dimen/_0sdp"
+        android:layout_height="1dp"
+        android:layout_marginHorizontal="@dimen/_8sdp"
+        android:background="@color/colorBackground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layout_task" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_edit"
+        style="@style/MaterialButtonTransparent"
+        android:layout_width="@dimen/_0sdp"
+        android:layout_height="@dimen/_32ssp"
+        android:paddingHorizontal="@dimen/_0sdp"
+        android:text="@string/menu_edit"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintEnd_toStartOf="@+id/view_divider1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view_divider"
+        app:layout_constraintWidth_percent="0.3" />
+
+    <View
+        android:id="@+id/view_divider1"
+        android:layout_width="1dp"
+        android:layout_height="@dimen/_20sdp"
+        android:background="@color/colorBackground"
+        app:layout_constraintBottom_toBottomOf="@+id/button_edit"
+        app:layout_constraintEnd_toStartOf="@+id/button_mark"
+        app:layout_constraintStart_toEndOf="@+id/button_edit"
+        app:layout_constraintTop_toTopOf="@+id/button_edit" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_mark"
+        style="@style/MaterialButtonTransparent"
+        android:layout_width="@dimen/_0sdp"
+        android:layout_height="@dimen/_32ssp"
+        android:paddingHorizontal="@dimen/_0sdp"
+        android:text="@string/menu_completed"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintEnd_toStartOf="@+id/view_divider2"
+        app:layout_constraintStart_toEndOf="@+id/view_divider1"
+        app:layout_constraintTop_toTopOf="@+id/button_edit"
+        app:layout_constraintWidth_percent="0.4" />
+
+    <View
+        android:id="@+id/view_divider2"
+        android:layout_width="1dp"
+        android:layout_height="@dimen/_20sdp"
+        android:background="@color/colorBackground"
+        app:layout_constraintBottom_toBottomOf="@+id/button_edit"
+        app:layout_constraintEnd_toStartOf="@+id/button_delete"
+        app:layout_constraintStart_toEndOf="@+id/button_mark"
+        app:layout_constraintTop_toTopOf="@+id/button_edit" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_delete"
+        style="@style/MaterialButtonTransparent"
+        android:layout_width="@dimen/_0sdp"
+        android:layout_height="@dimen/_32ssp"
+        android:paddingHorizontal="@dimen/_0sdp"
+        android:text="@string/menu_delete"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/view_divider2"
+        app:layout_constraintTop_toTopOf="@+id/button_edit"
+        app:layout_constraintWidth_percent="0.3" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

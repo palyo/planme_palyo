@@ -1,0 +1,75 @@
+<resources>
+    <string name="app_name" translatable="false">Reminder: To do list &amp; Calendar</string>
+    <string name="app_name_manifest" translatable="false">#Reminder: To do list &amp; Calendar</string>
+    <string name="message_policy" translatable="false">By clicking \'Agree &amp; Continue\' you accept and approve the <a href="https://privacy-and-policy-online.blogspot.com/2021/10/privacy-policy.html">Privacy Policy</a></string>
+
+    <string name="navigation_home">Home</string>
+    <string name="navigation_calendar">Calendar</string>
+    <string name="navigation_settings">Settings</string>
+    <string name="text_hint_search_your_task">Search your task</string>
+
+    <string name="title_new_task">New Task</string>
+    <string name="title_update_task">Update Task</string>
+    <string name="button_create_task">Create Task</string>
+    <string name="button_update_task">Update Task</string>
+    <string name="label_title">Title</string>
+    <string name="label_description">Description</string>
+    <string name="hint_task_title">Task title here</string>
+    <string name="hint_task_description">Write something about task</string>
+    <string name="hint_dd_mmmm">dd MMM</string>
+    <string name="label_due_date">Due date</string>
+    <string name="label_end_date">End date</string>
+    <string name="label_start_time">Start at</string>
+    <string name="label_end_time">End at</string>
+    <string name="label_task_submission">Task submission</string>
+    <string name="label_workspace">Workspace</string>
+    <string name="hint_select_workspace">Select Workspace</string>
+    <string name="hint_hh_mm">hh:mm</string>
+    <string name="button_choose">Choose</string>
+    <string name="button_cancel">Cancel</string>
+    <string name="label_your_workspace">Your Workspace</string>
+    <string name="label_your_timeline">Your Timeline</string>
+    <string name="label_today_task">Today\'s Task</string>
+    <string name="label_tasks">Tasks</string>
+    <string name="label_task_update">Task\'s Update</string>
+    <string name="button_see_more">See more</string>
+    <string name="label_daily_tasks">Task Today</string>
+    <string name="label_completed_tasks">Task Complete</string>
+    <string name="body_daily_task_done">%1$s/%2$s task done</string>
+    <string name="body_completed_task">%1$s/%2$s task finished</string>
+    <string name="label_total_task_today">You have total %1$s task today</string>
+    <string name="task_duration_schedule">Duration: %1$s | Schedule: %2$s</string>
+    <string name="task_duration_time">Duration: %1$s from: %2$s to %3$s</string>
+    <string name="task_schedule_remaining">Schedule: %1$s | Remaining: %2$s days</string>
+    <string name="message_assign_workspace">Please assign workspace</string>
+    <string name="message_validation_title">Title cannot be empty</string>
+    <string name="title_track_your_task">Track your task</string>
+    <string name="menu_edit">Edit</string>
+    <string name="menu_delete">Delete</string>
+    <string name="menu_completed">Completed</string>
+    <string name="menu_uncompleted">Uncompleted</string>
+
+    <string name="menu_app_language">App Language</string>
+    <string name="label_theme">Theme mode</string>
+    <string name="theme_system_default">System default</string>
+    <string name="theme_light_mode">Light mode</string>
+    <string name="theme_dark_mode">Dark mode</string>
+    <string name="label_other">Other</string>
+    <string name="menu_share_app">Share app</string>
+    <string name="menu_privacy_policy">Privacy policy</string>
+    <string name="menu_manage_consent">Manage consent</string>
+    <string name="menu_about_caller_id">About caller ID</string>
+
+    <string name="title_permission_required">Permission Required</string>
+    <string name="body_permission_required">Please grant the following permissions to ensure uninterrupted use of the app.</string>
+    <string name="title_phone_state">Phone State</string>
+    <string name="body_phone_state">Helps to identify incoming and outgoing call states.</string>
+    <string name="title_display_over_other_apps">Display Over Other Apps</string>
+    <string name="body_display_over_other_apps">Used in order for the aftercall feature to function properly.</string>
+    <string name="button_next">Next</string>
+    <string name="button_allow_and_continue">Allow &amp; Continue</string>
+    <string name="button_enable">Enable</string>
+
+    <string name="text_intro_page_2">Track and complete your daily and one-time tasks on schedule with easy-to-use timelines.</string>
+    <string name="text_intro_page_1">Quickly access important tools after every call with our new post-call feature!</string>
+</resources>

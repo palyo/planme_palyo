@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1077996614292",
+    "project_id": "reminder-to-do-list-calendar",
+    "storage_bucket": "reminder-to-do-list-calendar.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1077996614292:android:d50aee987ddad956e97a81",
+        "android_client_info": {
+          "package_name": "aurora.reminder.todolist.calendar.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD3T25ZrGF77Q8TDQq4bof0kw5Aa6sAeKs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -11,7 +11,6 @@ fun Context.getColorCompat(@ColorRes resId: Int) =
 fun Context.getDrawableCompat(@DrawableRes resId: Int) =
     ContextCompat.getDrawable(this, resId)
 
-
 fun Context.isNetworkAvailable(): Boolean {
     val connectivityManager = getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
     val activeNetwork: NetworkInfo? = connectivityManager.activeNetworkInfo

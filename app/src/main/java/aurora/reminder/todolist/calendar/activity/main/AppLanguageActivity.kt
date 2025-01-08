@@ -2,15 +2,15 @@ package aurora.reminder.todolist.calendar.activity.main
 
 import androidx.activity.*
 import androidx.recyclerview.widget.*
-import coder.apps.space.library.R
-import coder.apps.space.library.base.*
-import coder.apps.space.library.extension.*
-import coder.apps.space.library.helper.*
 import aurora.reminder.todolist.calendar.activity.*
 import aurora.reminder.todolist.calendar.adapter.*
 import aurora.reminder.todolist.calendar.databinding.*
 import aurora.reminder.todolist.calendar.extension.*
 import aurora.reminder.todolist.calendar.module.*
+import coder.apps.space.library.R
+import coder.apps.space.library.base.*
+import coder.apps.space.library.extension.*
+import coder.apps.space.library.helper.*
 
 class AppLanguageActivity : BaseActivity<ActivityAppLanguageBinding>(ActivityAppLanguageBinding::inflate) {
     private var language: String = "en"

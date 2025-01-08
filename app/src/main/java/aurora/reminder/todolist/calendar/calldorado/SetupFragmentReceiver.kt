@@ -1,7 +1,6 @@
 package aurora.reminder.todolist.calendar.calldorado
 
 import android.content.*
-import aurora.reminder.todolist.calendar.calldorado.*
 import com.calldorado.Calldorado.setAftercallCustomView
 
 class SetupFragmentReceiver : BroadcastReceiver() {

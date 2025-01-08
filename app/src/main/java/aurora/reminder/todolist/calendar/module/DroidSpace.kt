@@ -16,7 +16,6 @@ var Context.appOpenCount: Int
         TinyDB(this).putInt("appOpenCount", value)
     }
 
-
 fun Activity.init(callback: () -> Unit) {
     val apiService = ApiClient(this).client?.create(ApiService::class.java)
     val call = apiService?.getConfig("49_Reminder_To_do_list_and_Calendar/ad_manager.json")

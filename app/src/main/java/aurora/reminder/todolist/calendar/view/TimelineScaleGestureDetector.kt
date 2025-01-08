@@ -1,8 +1,7 @@
 package aurora.reminder.todolist.calendar.view
 
-import android.view.ScaleGestureDetector
-import kotlin.math.max
-import kotlin.math.min
+import android.view.*
+import kotlin.math.*
 
 class TimelineScaleGestureDetector(
     private val timelineView: TimelineView,
@@ -22,13 +21,10 @@ class TimelineScaleGestureDetector(
 
     override fun onScale(detector: ScaleGestureDetector): Boolean {
         val scaleFactor = detector.scaleFactor
-
         // Calculate new hour width
         val newHourWidth = timelineView.hourWidth * scaleFactor
-
         // Constrain the hour width between min and max values
         val constrainedHourWidth = max(MIN_HOUR_WIDTH, min(newHourWidth, MAX_HOUR_WIDTH))
-
         // Update both views with the new hour width
         timelineView.apply {
             hourWidth = constrainedHourWidth

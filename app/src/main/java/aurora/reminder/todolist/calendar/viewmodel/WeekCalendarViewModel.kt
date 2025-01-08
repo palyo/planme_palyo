@@ -5,10 +5,8 @@ import kotlinx.coroutines.*
 import java.util.*
 
 class WeekCalendarViewModel : ViewModel() {
-
     private val _weeks = MutableLiveData<MutableList<MutableList<Calendar>>>()
     val weeks: LiveData<MutableList<MutableList<Calendar>>> = _weeks
-
     private val _currentWeekPosition = MutableLiveData<Int>()
     val currentWeekPosition: LiveData<Int> = _currentWeekPosition
 
@@ -42,7 +40,6 @@ class WeekCalendarViewModel : ViewModel() {
                 add(Calendar.DAY_OF_MONTH, -1)
             }
         }
-
         val endCalendar = Calendar.getInstance(Locale.ENGLISH).apply {
             set(Calendar.YEAR, 2031)
             set(Calendar.MONTH, Calendar.JANUARY)
@@ -52,7 +49,6 @@ class WeekCalendarViewModel : ViewModel() {
             set(Calendar.SECOND, 0)
             set(Calendar.MILLISECOND, 0)
         }
-
         val allWeeks = mutableListOf<MutableList<Calendar>>()
 
         while (startCalendar.before(endCalendar)) {
@@ -78,7 +74,7 @@ class WeekCalendarViewModel : ViewModel() {
 
     fun findWeekPosition(calendar: Calendar): Int {
         for ((index, week) in _weeks.value?.withIndex()!!) {
-            if (week.any { isSame(it,calendar) }) {
+            if (week.any { isSame(it, calendar) }) {
                 return index
             }
         }

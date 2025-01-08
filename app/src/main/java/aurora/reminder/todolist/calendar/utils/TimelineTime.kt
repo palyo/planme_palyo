@@ -7,7 +7,7 @@ data class TimelineTime(
     fun toPosition(hourWidth: Float): Float {
         return hour * hourWidth + (minute / 60f * hourWidth)
     }
-    
+
     companion object {
         fun fromString(time: String): TimelineTime {
             val parts = time.split(":")

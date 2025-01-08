@@ -3,11 +3,12 @@ package aurora.reminder.todolist.calendar.activity
 import android.os.*
 import android.view.*
 import android.widget.*
+import androidx.activity.*
 import androidx.activity.result.contract.*
 import androidx.core.view.*
 import androidx.fragment.app.*
 import androidx.lifecycle.*
-import aurora.reminder.todolist.calendar.*
+import aurora.reminder.todolist.calendar.R
 import aurora.reminder.todolist.calendar.database.*
 import aurora.reminder.todolist.calendar.database.table.*
 import aurora.reminder.todolist.calendar.databinding.*
@@ -19,6 +20,7 @@ import coder.apps.space.library.extension.*
 import kotlinx.coroutines.*
 
 class PlannerActivity : BaseActivity<ActivityPlannerBinding>(ActivityPlannerBinding::inflate) {
+    private var doubleBackToExitPressedOnce = false
     private val notificationLauncher = registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) { permissions -> }
     override fun ActivityPlannerBinding.initExtra() {
         HomeFragment.newInstance().updateFragment()
@@ -99,6 +101,23 @@ class PlannerActivity : BaseActivity<ActivityPlannerBinding>(ActivityPlannerBind
 
     override fun ActivityPlannerBinding.initView() {
         updateNavigationBarColor(R.color.colorTransparent)
+        onBackPressedDispatcher.addCallback {
+            val currentFragment = supportFragmentManager.primaryNavigationFragment
+            if (currentFragment !is HomeFragment) {
+                bottomNavigationView.selectedItemId = R.id.action_home
+                HomeFragment.newInstance().updateFragment()
+                return@addCallback
+            }
+            if (doubleBackToExitPressedOnce) {
+                finishAffinity()
+                return@addCallback
+            }
+
+            this@PlannerActivity.doubleBackToExitPressedOnce = true
+            Toast.makeText(this@PlannerActivity, "Please click BACK again to exit", Toast.LENGTH_SHORT).show()
+
+            delayed(2000) { doubleBackToExitPressedOnce = false }
+        }
     }
 
     override fun dispatchTouchEvent(event: MotionEvent): Boolean {

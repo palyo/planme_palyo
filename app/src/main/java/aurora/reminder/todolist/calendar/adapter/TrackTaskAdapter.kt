@@ -37,7 +37,7 @@ class TrackTaskAdapter(val context: Context) : RecyclerView.Adapter<RecyclerView
         fun bind(taskActivity: TaskActivity) {
             binding.apply {
                 taskDate.text = dateSdf.format(taskActivity.completionDate)
-                taskTime.text = if (taskActivity.completionTime == 0L)"-" else timeSdf.format(taskActivity.completionTime)
+                taskTime.text = if (taskActivity.completionTime == 0L) "-" else timeSdf.format(taskActivity.completionTime)
                 taskStatus.text = if (taskActivity.isCompleted) "Completed" else "Not Performed"
             }
         }

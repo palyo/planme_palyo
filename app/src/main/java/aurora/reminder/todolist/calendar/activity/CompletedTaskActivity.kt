@@ -2,12 +2,12 @@ package aurora.reminder.todolist.calendar.activity
 
 import androidx.activity.*
 import androidx.recyclerview.widget.*
-import coder.apps.space.library.base.*
-import coder.apps.space.library.extension.*
-import kotlinx.coroutines.*
 import aurora.reminder.todolist.calendar.adapter.*
 import aurora.reminder.todolist.calendar.database.*
 import aurora.reminder.todolist.calendar.databinding.*
+import coder.apps.space.library.base.*
+import coder.apps.space.library.extension.*
+import kotlinx.coroutines.*
 
 class CompletedTaskActivity : BaseActivity<ActivityCompletedTaskBinding>(ActivityCompletedTaskBinding::inflate) {
     private var taskAdapter: CompletedTaskAdapter? = null

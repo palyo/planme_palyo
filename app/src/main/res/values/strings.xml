@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name" translatable="false">Reminder: To do list &amp; Calendar</string>
+    <string name="app_name_splash1" translatable="false">Reminder</string>
+    <string name="app_name_splash2" translatable="false">To do list &amp; Calendar</string>
     <string name="app_name_manifest" translatable="false">#Reminder: To do list &amp; Calendar</string>
     <string name="message_policy" translatable="false">By clicking \'Agree &amp; Continue\' you accept and approve the <a href="https://privacy-and-policy-online.blogspot.com/2021/10/privacy-policy.html">Privacy Policy</a></string>
 
@@ -72,4 +74,6 @@
 
     <string name="text_intro_page_2">Track and complete your daily and one-time tasks on schedule with easy-to-use timelines.</string>
     <string name="text_intro_page_1">Quickly access important tools after every call with our new post-call feature!</string>
+    <string name="message_create_your_first_task">Tap to create your first task.</string>
+    <string name="message_create_new_task">Tap to create new task.</string>
 </resources>

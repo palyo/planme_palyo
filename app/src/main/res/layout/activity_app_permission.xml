@@ -9,28 +9,25 @@
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/icon_app"
-        android:layout_width="@dimen/_120sdp"
-        android:layout_height="@dimen/_120sdp"
+        android:layout_width="@dimen/_0sdp"
+        android:layout_height="@dimen/_0sdp"
         android:adjustViewBounds="true"
-        app:layout_constraintBottom_toTopOf="@+id/text_app"
+        app:layout_constraintBottom_toTopOf="@+id/layout_root"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_chainStyle="packed"
-        app:srcCompat="@mipmap/ic_launcher" />
+        app:srcCompat="@drawable/ic_intro_1" />
 
-    <TextView
-        android:id="@+id/text_app"
-        style="@style/TextExtraBold"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_24sdp"
-        android:text="@string/app_name"
-        android:textSize="@dimen/_24ssp"
+
+    <View
+        android:layout_width="@dimen/_0sdp"
+        android:layout_height="@dimen/_100sdp"
+        android:background="@drawable/ic_onboard_gradient_background"
         app:layout_constraintBottom_toTopOf="@+id/layout_root"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/icon_app" />
+        app:layout_constraintStart_toStartOf="parent" />
+
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layout_root"
@@ -67,37 +64,34 @@
         <View
             android:id="@+id/view_divider_1"
             android:layout_width="@dimen/_0sdp"
-            android:layout_height="@dimen/_12sdp"
+            android:layout_height="@dimen/_24sdp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/text_note" />
 
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/icon_phone"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
+            android:background="@color/colorCardBackground"
+            app:contentPadding="@dimen/_6sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view_divider_1"
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full"
+            app:srcCompat="@drawable/ic_permission_phone_state"
+            app:tint="@color/colorAccent" />
+
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/text_phone_state"
-            style="@style/TextBold"
+            style="@style/TextSemiBold"
             android:layout_width="@dimen/_0sdp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginStart="@dimen/_8sdp"
             android:gravity="start|center_vertical"
             android:text="@string/title_phone_state"
             android:textSize="@dimen/_14ssp"
-            app:layout_constraintEnd_toStartOf="@+id/is_phone_state"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/view_divider_1" />
-
-        <com.google.android.material.checkbox.MaterialCheckBox
-            android:id="@+id/is_phone_state"
-            style="@style/TextMedium"
-            android:layout_width="@dimen/_24sdp"
-            android:layout_height="@dimen/_24sdp"
-            android:button="@drawable/ic_button_selector"
-            android:clickable="true"
-            android:minWidth="0dp"
-            android:minHeight="0dp"
-            app:buttonTint="@null"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/text_phone_state"
-            app:useMaterialThemeColors="false" />
+            app:layout_constraintStart_toEndOf="@+id/icon_phone"
+            app:layout_constraintTop_toTopOf="@+id/icon_phone" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/body_phone_state"
@@ -108,36 +102,33 @@
             android:gravity="start|center_vertical"
             android:text="@string/body_phone_state"
             android:textSize="@dimen/_9ssp"
-            app:layout_constraintEnd_toStartOf="@+id/is_phone_state"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/text_phone_state"
             app:layout_constraintTop_toBottomOf="@+id/text_phone_state" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/icon_overlay"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:background="@color/colorCardBackground"
+            app:contentPadding="@dimen/_6sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/body_phone_state"
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full"
+            app:srcCompat="@drawable/ic_permission_overlay"
+            app:tint="@color/colorAccent" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/text_overlay"
-            style="@style/TextBold"
+            style="@style/TextSemiBold"
             android:layout_width="@dimen/_0sdp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginStart="@dimen/_8sdp"
             android:gravity="start|center_vertical"
             android:text="@string/title_display_over_other_apps"
             android:textSize="@dimen/_14ssp"
-            app:layout_constraintEnd_toStartOf="@+id/is_overlay"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/body_phone_state" />
-
-        <com.google.android.material.checkbox.MaterialCheckBox
-            android:id="@+id/is_overlay"
-            style="@style/TextMedium"
-            android:layout_width="@dimen/_24sdp"
-            android:layout_height="@dimen/_24sdp"
-            android:button="@drawable/ic_button_selector"
-            android:clickable="true"
-            android:minWidth="0dp"
-            android:minHeight="0dp"
-            app:buttonTint="@null"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/text_overlay"
-            app:useMaterialThemeColors="false" />
+            app:layout_constraintStart_toEndOf="@+id/icon_overlay"
+            app:layout_constraintTop_toTopOf="@+id/icon_overlay" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/body_overlay"
@@ -148,23 +139,49 @@
             android:gravity="start|center_vertical"
             android:text="@string/body_display_over_other_apps"
             android:textSize="@dimen/_9ssp"
-            app:layout_constraintEnd_toStartOf="@+id/is_overlay"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/text_overlay"
             app:layout_constraintTop_toBottomOf="@+id/text_overlay" />
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/is_terms_agree"
+            android:layout_width="@dimen/_28sdp"
+            android:layout_height="@dimen/_28sdp"
+            android:layout_gravity="start"
+            android:layout_marginTop="@dimen/_24sdp"
+            app:buttonTint="@null"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/body_overlay"
+            app:useMaterialThemeColors="false" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_policy"
+            style="@style/TextMedium"
+            android:layout_width="@dimen/_0sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:gravity="start"
+            android:linksClickable="true"
+            android:text="@string/message_policy"
+            android:textColorLink="@color/colorAccent"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/is_terms_agree"
+            app:layout_constraintTop_toTopOf="@+id/is_terms_agree" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button_continue"
             style="@style/MaterialButtonAccent"
-            app:backgroundTint="@color/colorInverseCardBackground"
-            android:textColor="@color/colorInverseText"
             android:layout_width="@dimen/_0sdp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_12sdp"
             android:text="@string/button_allow_and_continue"
+            android:textColor="@color/colorInverseText"
+            app:backgroundTint="@color/colorInverseCardBackground"
             app:cornerRadius="@dimen/_8sdp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/body_overlay" />
+            app:layout_constraintTop_toBottomOf="@+id/text_policy" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

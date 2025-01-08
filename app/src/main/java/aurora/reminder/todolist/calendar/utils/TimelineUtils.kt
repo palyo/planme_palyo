@@ -3,7 +3,6 @@ package aurora.reminder.todolist.calendar.utils
 import aurora.reminder.todolist.calendar.model.*
 
 object TimelineUtils {
-
     fun createTask(
         id: Int,
         title: String,

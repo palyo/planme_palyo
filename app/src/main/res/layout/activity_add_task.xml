@@ -400,10 +400,10 @@
             android:layout_height="@dimen/_42sdp"
             android:layout_marginHorizontal="@dimen/_16sdp"
             android:layout_marginBottom="@dimen/_12sdp"
-            app:cornerRadius="@dimen/_8sdp"
-            app:backgroundTint="@color/colorInverseCardBackground"
-            android:textColor="@color/colorInverseText"
             android:text="@string/button_create_task"
+            android:textColor="@color/colorInverseText"
+            app:backgroundTint="@color/colorInverseCardBackground"
+            app:cornerRadius="@dimen/_8sdp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />

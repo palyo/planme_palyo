@@ -40,8 +40,8 @@ class AfterCallCustomView(private var mContext: Context) : CalldoradoCustomView(
             val (start, end) = fetchStartAndEndOfDay(Date().time)
             val systems = mContext.workspaceTaskDao.findSystemWorkspacesWithTasksNotLive(start, end)
             val personals = mContext.workspaceTaskDao.findPersonalWorkspacesWithTasksNotLive(start, end)
-            val newSystems = groupWorkspacesById(systems,start, end)
-            val newPersonals = groupWorkspacesById(personals,start, end)
+            val newSystems = groupWorkspacesById(systems, start, end)
+            val newPersonals = groupWorkspacesById(personals, start, end)
             val systemWorkspaceTasks = mutableListOf<Any>()
             newSystems.forEach {
                 systemWorkspaceTasks.add(it.workspace)
@@ -57,7 +57,6 @@ class AfterCallCustomView(private var mContext: Context) : CalldoradoCustomView(
             launch(Dispatchers.IO) {
                 systemWorkspaceTaskAdapter?.updateData(systemWorkspaceTasks)
             }
-
             val personalWorkspaceTasks = mutableListOf<Any>()
             newPersonals.forEach {
                 personalWorkspaceTasks.add(it.workspace)
@@ -89,7 +88,6 @@ class AfterCallCustomView(private var mContext: Context) : CalldoradoCustomView(
 
         for (workspaceWithTasks in workspaceList) {
             val workspaceId = workspaceWithTasks.workspace.id ?: continue  // Skip if workspace id is null
-
             // Filter tasks based on the desired date range
             val filteredTasks = workspaceWithTasks.tasks.filter { taskWithActivities ->
                 val task = taskWithActivities.task
@@ -100,7 +98,6 @@ class AfterCallCustomView(private var mContext: Context) : CalldoradoCustomView(
             if (filteredTasks.isNotEmpty()) {
                 // Create a new WorkspaceWithTasks object with filtered tasks
                 val newWorkspaceWithTasks = workspaceWithTasks.copy(tasks = filteredTasks.toMutableList())
-
                 val existingWorkspace = groupedMap[workspaceId]
 
                 if (existingWorkspace != null) {
@@ -119,7 +116,6 @@ class AfterCallCustomView(private var mContext: Context) : CalldoradoCustomView(
                 groupedMap[workspaceId] = emptyWorkspaceWithTasks
             }
         }
-
         // Return the list of workspaces grouped by ID
         return groupedMap.values.toMutableList()
     }
@@ -127,7 +123,7 @@ class AfterCallCustomView(private var mContext: Context) : CalldoradoCustomView(
     private fun createNewTask() {
         Intent(mContext, AddTaskActivity::class.java).apply {
             addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-            putExtra("isCallAfter",true)
+            putExtra("isCallAfter", true)
             mContext.startActivity(this)
         }
         if (calldoradoContext is CallerIdActivity) {

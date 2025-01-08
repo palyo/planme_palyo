@@ -275,10 +275,12 @@ class AddTaskActivity : BaseActivity<ActivityAddTaskBinding>(ActivityAddTaskBind
     override fun ActivityAddTaskBinding.initView() {
         setSupportActionBar(toolbar)
         toolbar.setNavigationOnClickListener { onBackPressedDispatcher.onBackPressed() }
-        onBackPressedDispatcher.addCallback { if (intent?.getBooleanExtra("isCallAfter", false) == true) {
-            go(PlannerActivity::class.java, finish = true)
-        } else {
-            finish()
-        } }
+        onBackPressedDispatcher.addCallback {
+            if (intent?.getBooleanExtra("isCallAfter", false) == true) {
+                go(PlannerActivity::class.java, finish = true)
+            } else {
+                finish()
+            }
+        }
     }
 }

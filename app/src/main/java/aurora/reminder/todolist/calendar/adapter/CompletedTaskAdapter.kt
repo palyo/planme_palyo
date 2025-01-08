@@ -3,12 +3,12 @@ package aurora.reminder.todolist.calendar.adapter
 import android.content.*
 import android.view.*
 import androidx.recyclerview.widget.*
-import coder.apps.space.library.extension.*
 import aurora.reminder.todolist.calendar.*
 import aurora.reminder.todolist.calendar.database.relations.*
 import aurora.reminder.todolist.calendar.databinding.*
 import aurora.reminder.todolist.calendar.extension.*
 import aurora.reminder.todolist.calendar.model.*
+import coder.apps.space.library.extension.*
 
 class CompletedTaskAdapter(val context: Context, val listener: (TaskWithActivities) -> Unit) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     private var data: MutableList<TaskWithActivities> = mutableListOf()

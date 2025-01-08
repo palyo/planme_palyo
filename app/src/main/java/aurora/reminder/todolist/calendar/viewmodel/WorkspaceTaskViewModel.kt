@@ -10,10 +10,8 @@ class WorkspaceTaskViewModel(private val workspaceTaskDao: WorkspaceTaskDao) : V
     private val _startAndEndOfDay = MutableLiveData<Pair<Long, Long>>()
     private val _systemWorkspaceWithTask = MediatorLiveData<MutableList<WorkspaceWithTasks>>()
     val systemWorkspaceWithTask: LiveData<MutableList<WorkspaceWithTasks>> get() = _systemWorkspaceWithTask
-
     private val _personalWorkspaceWithTask = MediatorLiveData<MutableList<WorkspaceWithTasks>>()
     val personalWorkspaceWithTask: LiveData<MutableList<WorkspaceWithTasks>> get() = _personalWorkspaceWithTask
-
     private var sourceSystem: LiveData<MutableList<WorkspaceWithTasks>>? = null
     private var sourcePersonal: LiveData<MutableList<WorkspaceWithTasks>>? = null
 
@@ -29,7 +27,7 @@ class WorkspaceTaskViewModel(private val workspaceTaskDao: WorkspaceTaskDao) : V
             val newSource = workspaceTaskDao.findSystemWorkspacesWithTasks(start, end)
             sourceSystem = newSource
             _systemWorkspaceWithTask.addSource(newSource) { tasks ->
-                val newTasks = groupWorkspacesById(tasks,start, end)
+                val newTasks = groupWorkspacesById(tasks, start, end)
                 _systemWorkspaceWithTask.value = newTasks
             }
 
@@ -37,7 +35,7 @@ class WorkspaceTaskViewModel(private val workspaceTaskDao: WorkspaceTaskDao) : V
             val newSourcePersonal = workspaceTaskDao.findPersonalWorkspacesWithTasks(start, end)
             sourcePersonal = newSourcePersonal
             _personalWorkspaceWithTask.addSource(newSourcePersonal) { tasks ->
-                val newTasks = groupWorkspacesById(tasks,start, end)
+                val newTasks = groupWorkspacesById(tasks, start, end)
                 _personalWorkspaceWithTask.value = newTasks
             }
         }
@@ -52,7 +50,6 @@ class WorkspaceTaskViewModel(private val workspaceTaskDao: WorkspaceTaskDao) : V
 
         for (workspaceWithTasks in workspaceList) {
             val workspaceId = workspaceWithTasks.workspace.id ?: continue  // Skip if workspace id is null
-
             // Filter tasks based on the desired date range
             val filteredTasks = workspaceWithTasks.tasks.filter { taskWithActivities ->
                 val task = taskWithActivities.task
@@ -63,7 +60,6 @@ class WorkspaceTaskViewModel(private val workspaceTaskDao: WorkspaceTaskDao) : V
             if (filteredTasks.isNotEmpty()) {
                 // Create a new WorkspaceWithTasks object with filtered tasks
                 val newWorkspaceWithTasks = workspaceWithTasks.copy(tasks = filteredTasks.toMutableList())
-
                 val existingWorkspace = groupedMap[workspaceId]
 
                 if (existingWorkspace != null) {
@@ -82,7 +78,6 @@ class WorkspaceTaskViewModel(private val workspaceTaskDao: WorkspaceTaskDao) : V
                 groupedMap[workspaceId] = emptyWorkspaceWithTasks
             }
         }
-
         // Return the list of workspaces grouped by ID
         return groupedMap.values.toMutableList()
     }

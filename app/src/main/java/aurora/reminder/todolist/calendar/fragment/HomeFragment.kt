@@ -5,8 +5,6 @@ import android.os.*
 import android.view.animation.*
 import androidx.lifecycle.*
 import androidx.recyclerview.widget.*
-import coder.apps.space.library.base.*
-import coder.apps.space.library.extension.*
 import aurora.reminder.todolist.calendar.*
 import aurora.reminder.todolist.calendar.activity.*
 import aurora.reminder.todolist.calendar.adapter.*
@@ -16,6 +14,8 @@ import aurora.reminder.todolist.calendar.extension.*
 import aurora.reminder.todolist.calendar.model.*
 import aurora.reminder.todolist.calendar.view.*
 import aurora.reminder.todolist.calendar.viewmodel.*
+import coder.apps.space.library.base.*
+import coder.apps.space.library.extension.*
 import java.util.*
 
 class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::inflate) {
@@ -77,6 +77,11 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
             interpolator = BounceInterpolator()
         }
         bounceAnim?.start()
+
+        if (tinyDB?.getBoolean("IS_FIRST_TIME", true) == true) {
+            tinyDB?.putBoolean("IS_FIRST_TIME", false)
+            binding?.textBubble?.text = getString(R.string.message_create_your_first_task)
+        }
     }
 
     fun stopBounceAnimation() {

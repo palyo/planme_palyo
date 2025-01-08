@@ -34,9 +34,9 @@
                     android:id="@+id/ad_app_icon"
                     android:layout_width="46dp"
                     android:layout_height="46dp"
+                    android:adjustViewBounds="true"
                     android:background="@drawable/ic_shimmer_background"
-                    android:backgroundTint="@color/colorBackground"
-                    android:adjustViewBounds="true" />
+                    android:backgroundTint="@color/colorBackground" />
 
                 <LinearLayout
                     android:layout_width="match_parent"

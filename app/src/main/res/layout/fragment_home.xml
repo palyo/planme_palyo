@@ -363,13 +363,14 @@
         app:layout_constraintEnd_toEndOf="parent">
 
         <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_bubble"
             style="@style/TextMedium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingHorizontal="@dimen/_12sdp"
             android:paddingTop="@dimen/_12sdp"
             android:paddingBottom="@dimen/_24sdp"
-            android:text="Tap to create your first task."
+            android:text="@string/message_create_new_task"
             android:textColor="@color/colorAccentTool"
             android:textSize="@dimen/_12ssp"
             app:layout_constraintEnd_toEndOf="parent"

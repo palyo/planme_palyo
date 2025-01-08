@@ -21,13 +21,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:indicatorColor="@color/colorAccent"
+            app:indicatorSize="@dimen/_48sdp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:trackColor="@color/colorTextOpacity24"
             app:trackStopIndicatorSize="@dimen/_0sdp"
-            app:indicatorSize="@dimen/_48sdp"
             app:trackThickness="@dimen/_2sdp" />
 
         <com.google.android.material.textview.MaterialTextView
@@ -51,11 +51,11 @@
         android:id="@+id/is_completed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:visibility="gone"
         android:checked="true"
         android:clickable="false"
         android:enabled="false"
         android:gravity="start|center_vertical"
+        android:visibility="gone"
         app:buttonTint="@color/colorInverseText"
         app:layout_constraintBottom_toBottomOf="@+id/layout_progress"
         app:layout_constraintEnd_toEndOf="@+id/layout_progress"

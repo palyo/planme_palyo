@@ -72,7 +72,7 @@ class App : MultiDexApplication(), Application.ActivityLifecycleCallbacks {
     override fun onActivityDestroyed(activity: Activity) {
     }
 
-     private fun createNotificationChannel() {
+    private fun createNotificationChannel() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val channel = NotificationChannel(
                 "task_channel",

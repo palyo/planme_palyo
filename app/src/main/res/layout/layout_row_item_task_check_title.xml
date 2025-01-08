@@ -9,8 +9,8 @@
         android:id="@+id/is_completed"
         android:layout_width="@dimen/_18sdp"
         android:layout_height="@dimen/_18sdp"
-        android:gravity="start|center_vertical"
         android:button="@drawable/ic_button_small_selector"
+        android:gravity="start|center_vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

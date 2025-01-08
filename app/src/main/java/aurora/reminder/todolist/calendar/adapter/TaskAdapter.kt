@@ -4,8 +4,6 @@ import android.content.*
 import android.graphics.*
 import android.view.*
 import androidx.recyclerview.widget.*
-import coder.apps.space.library.extension.*
-import kotlinx.coroutines.*
 import aurora.reminder.todolist.calendar.*
 import aurora.reminder.todolist.calendar.database.*
 import aurora.reminder.todolist.calendar.database.relations.*
@@ -13,9 +11,11 @@ import aurora.reminder.todolist.calendar.database.table.*
 import aurora.reminder.todolist.calendar.databinding.*
 import aurora.reminder.todolist.calendar.extension.*
 import aurora.reminder.todolist.calendar.model.*
+import coder.apps.space.library.extension.*
+import kotlinx.coroutines.*
 import java.util.*
 
-class TaskAdapter(val context: Context,val listener:(Task)->Unit) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class TaskAdapter(val context: Context, val listener: (Task) -> Unit) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     private var startOfDay: Long = 0L
     private var data: MutableList<TaskWithActivities> = mutableListOf()
 
@@ -23,7 +23,7 @@ class TaskAdapter(val context: Context,val listener:(Task)->Unit) : RecyclerView
         startOfDay = fetchStartAndEndOfDay(Date().time).first
     }
 
-    fun updateSelectedDate(time:Long){
+    fun updateSelectedDate(time: Long) {
         startOfDay = fetchStartAndEndOfDay(time).first
     }
 

@@ -12,7 +12,6 @@ class TaskViewModel(private val taskDao: TaskDao) : ViewModel() {
     val tasks: LiveData<MutableList<TaskWithActivities>> get() = _tasks
     private val _taskActivities = MediatorLiveData<MutableList<TaskWithActivities>>()
     val taskActivities: LiveData<MutableList<TaskWithActivities>> get() = _taskActivities
-
     private var source: LiveData<MutableList<TaskWithActivities>>? = null
     private var sourceTaskActivities: LiveData<MutableList<TaskWithActivities>>? = null
 

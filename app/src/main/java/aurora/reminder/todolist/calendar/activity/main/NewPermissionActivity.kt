@@ -16,24 +16,24 @@ import androidx.activity.result.*
 import androidx.activity.result.contract.*
 import androidx.viewpager.widget.*
 import androidx.viewpager.widget.ViewPager.OnPageChangeListener
-import coder.apps.space.library.base.*
-import coder.apps.space.library.extension.*
-import coder.apps.space.library.helper.*
-import com.bumptech.glide.*
-import com.google.android.material.imageview.*
 import aurora.reminder.todolist.calendar.R
 import aurora.reminder.todolist.calendar.activity.*
 import aurora.reminder.todolist.calendar.calldorado.*
 import aurora.reminder.todolist.calendar.databinding.*
 import aurora.reminder.todolist.calendar.extension.*
 import aurora.reminder.todolist.calendar.module.*
+import coder.apps.space.library.base.*
+import coder.apps.space.library.extension.*
+import coder.apps.space.library.helper.*
+import com.bumptech.glide.*
+import com.google.android.material.imageview.*
 
 class NewPermissionActivity : BaseActivity<ActivityNewPermissionBinding>(ActivityNewPermissionBinding::inflate) {
     private var permissionFlow: Int = 0
     private var introViewPagerAdapter: IntroViewPagerAdapter? = null
     private var settingOverLay: HandleSettingPreview? = null
     private val permissions = arrayOf(Manifest.permission.READ_PHONE_STATE)
-    private var screens: MutableList<Int> = mutableListOf(R.drawable.ic_intro_1, R.drawable.ic_intro_2, R.drawable.ic_intro_3)
+    private var screens: MutableList<Int> = mutableListOf(R.drawable.ic_intro_2, R.drawable.ic_intro_1, R.drawable.ic_intro_3)
     private var displayOverLauncher: ActivityResultLauncher<Intent> = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
         settingOverLay?.cancelPollingImeSettings()
         val isMoreNeeded = !hasOverlayPermission() || !hasPermissions(permissions)
@@ -193,7 +193,7 @@ class NewPermissionActivity : BaseActivity<ActivityNewPermissionBinding>(Activit
         }
     }
 
-    class IntroViewPagerAdapter(var context: Context, var screens: MutableList<Int> = mutableListOf(R.drawable.ic_intro_1, R.drawable.ic_intro_2, R.drawable.ic_intro_3)) : PagerAdapter() {
+    class IntroViewPagerAdapter(var context: Context, var screens: MutableList<Int> = mutableListOf(R.drawable.ic_intro_2, R.drawable.ic_intro_1, R.drawable.ic_intro_3)) : PagerAdapter() {
         override fun instantiateItem(container: ViewGroup, position: Int): Any {
             val inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
             val layoutScreen: View = inflater.inflate(R.layout.layout_onboarding, null)

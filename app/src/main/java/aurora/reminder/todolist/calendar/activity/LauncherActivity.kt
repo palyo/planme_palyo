@@ -3,18 +3,19 @@ package aurora.reminder.todolist.calendar.activity
 import android.*
 import android.os.*
 import androidx.lifecycle.*
-import coder.apps.space.library.base.*
-import coder.apps.space.library.extension.*
-import kotlinx.coroutines.*
 import aurora.reminder.todolist.calendar.activity.main.*
 import aurora.reminder.todolist.calendar.database.*
 import aurora.reminder.todolist.calendar.database.table.*
 import aurora.reminder.todolist.calendar.databinding.*
 import aurora.reminder.todolist.calendar.extension.*
 import aurora.reminder.todolist.calendar.module.*
+import coder.apps.space.library.R
+import coder.apps.space.library.base.*
+import coder.apps.space.library.extension.*
+import kotlinx.coroutines.*
 import java.util.concurrent.atomic.*
 
-class LauncherActivity : BaseActivity<ActivityLauncherBinding>(ActivityLauncherBinding::inflate) {
+class LauncherActivity : BaseActivity<ActivityLauncherBinding>(ActivityLauncherBinding::inflate, isFullScreen = true) {
     private var consentManager: ConsentManager? = null
     private val isMobileAdsInitializeCalled = AtomicBoolean(false)
     override fun ActivityLauncherBinding.initExtra() {
@@ -63,9 +64,7 @@ class LauncherActivity : BaseActivity<ActivityLauncherBinding>(ActivityLauncherB
     }
 
     private fun gotoDashboard() {
-        if (tinyDB?.getBoolean(IS_INTRO_ENABLED, true) == true && (!hasPermissions(arrayOf(Manifest.permission.READ_PHONE_STATE)) || !hasOverlayPermission())) {
-            go(NewPermissionActivity::class.java, finish = true)
-        } else if (!hasPermissions(arrayOf(Manifest.permission.READ_PHONE_STATE)) || !hasOverlayPermission()) {
+        if (!hasPermissions(arrayOf(Manifest.permission.READ_PHONE_STATE)) || !hasOverlayPermission()) {
             go(AppPermissionActivity::class.java, finish = true)
         } else if (tinyDB?.getBoolean(IS_LANGUAGE_ENABLED, true) == true) {
             go(AppLanguageActivity::class.java, finish = true)
@@ -76,5 +75,7 @@ class LauncherActivity : BaseActivity<ActivityLauncherBinding>(ActivityLauncherB
 
     override fun ActivityLauncherBinding.initListeners() {}
 
-    override fun ActivityLauncherBinding.initView() {}
+    override fun ActivityLauncherBinding.initView() {
+        updateStatusBarColor(R.color.colorTransparent)
+    }
 }

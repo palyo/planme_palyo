@@ -9,7 +9,6 @@ class TaskReminderReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context, intent: Intent) {
         val taskTitle = intent.getStringExtra("TASK_TITLE")
         val taskId = intent.getIntExtra("TASK_ID", -1)
-
         val notificationManager = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         val notificationId = taskId
         val notification = NotificationCompat.Builder(context, "task_channel")

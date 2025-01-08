@@ -1,7 +1,7 @@
 package aurora.reminder.todolist.calendar.utils
 
-import android.graphics.Paint
-import android.text.TextPaint
+import android.graphics.*
+import android.text.*
 import android.text.TextUtils
 
 object TextUtils {

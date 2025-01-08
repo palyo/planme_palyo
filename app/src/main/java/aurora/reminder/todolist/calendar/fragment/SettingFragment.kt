@@ -2,13 +2,14 @@ package aurora.reminder.todolist.calendar.fragment
 
 import android.content.*
 import android.os.*
-import coder.apps.space.library.base.*
-import coder.apps.space.library.extension.*
 import aurora.reminder.todolist.calendar.*
 import aurora.reminder.todolist.calendar.activity.main.*
 import aurora.reminder.todolist.calendar.databinding.*
 import aurora.reminder.todolist.calendar.extension.*
 import aurora.reminder.todolist.calendar.module.*
+import coder.apps.space.library.base.*
+import coder.apps.space.library.extension.*
+import com.calldorado.ui.settings.*
 
 class SettingFragment : BaseFragment<FragmentSettingsBinding>(FragmentSettingsBinding::inflate) {
     override fun create() {
@@ -52,6 +53,18 @@ class SettingFragment : BaseFragment<FragmentSettingsBinding>(FragmentSettingsBi
             buttonPrivacy.setOnClickListener {
                 App.isOpenInter = true
                 activity?.launchUrl(getPolicyLink())
+            }
+            val consentManager = ConsentManager.getInstance(requireActivity())
+            consentManager.isPrivacyOptionsRequired.let {
+                buttonManageConsent.beVisibleIf(it)
+            }
+
+            buttonManageConsent.setOnClickListener {
+                consentManager.showPrivacyOptionsForm(this@context) {}
+            }
+
+            buttonAboutCallerId.setOnClickListener {
+                activity?.go(SettingsActivity::class.java)
             }
         }
     }

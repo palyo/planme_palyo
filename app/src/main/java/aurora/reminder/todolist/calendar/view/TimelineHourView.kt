@@ -14,12 +14,10 @@ class TimelineHourView @JvmOverloads constructor(
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0
 ) : View(context, attrs, defStyleAttr) {
-
     private val textHourPaint = Paint(Paint.ANTI_ALIAS_FLAG)
     var hourWidth = context.resources.getDimension(com.intuit.sdp.R.dimen._84sdp)
     private var padding = context.resources.getDimension(com.intuit.sdp.R.dimen._8sdp)
     var sideMargin = hourWidth / 2
-
     private val ZOOM_FACTOR = 1.2f
     private var MIN_HOUR_WIDTH = 60f
     private var MAX_HOUR_WIDTH = 300f
